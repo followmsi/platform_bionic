@@ -106,7 +106,7 @@ FdEntry* FdTableImpl<inline_fds>::at(size_t idx) {
 }
 
 void __libc_init_fdsan() {
-  constexpr auto default_level = ANDROID_FDSAN_ERROR_LEVEL_WARN_ONCE;
+  constexpr auto default_level = ANDROID_FDSAN_ERROR_LEVEL_DISABLED;
   const prop_info* pi = __system_property_find(kFdsanPropertyName);
   if (!pi) {
     android_fdsan_set_error_level(default_level);
